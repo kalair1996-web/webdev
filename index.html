@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0 → Shipped · Resume Parser</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">0 <span class="arrow">→</span> Shipped</a>
+      <nav class="nav">
+        <a href="#upload">Parser</a>
+        <a href="#results">Results</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Resume Parser · client-side demo</p>
+        <h1>Score your resume in seconds.</h1>
+        <p class="subtitle">
+          Upload a PDF and get an instant score, the skills it detects, and the
+          skills it's missing. Everything runs in your browser — no server, no
+          uploads, no data leaving your machine.
+        </p>
+      </div>
+    </section>
+
+    <!-- Upload -->
+    <section id="upload" class="upload-section">
+      <div class="container">
+        <div class="card">
+          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload a PDF resume">
+            <div class="dropzone-icon" aria-hidden="true">📄</div>
+            <p class="dropzone-title">Drop your resume here</p>
+            <p class="dropzone-hint">or <span class="link">browse files</span> · PDF only</p>
+            <input type="file" id="file-input" accept="application/pdf,.pdf" hidden />
+          </div>
+
+          <div class="sample-row">
+            <p>No PDF handy?</p>
+            <button id="sample-btn" class="btn-secondary" type="button">Try it with sample text</button>
+          </div>
+
+          <p id="status" class="status" role="status"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="results-section hidden">
+      <div class="container">
+        <div class="results-grid">
+
+          <!-- Score -->
+          <div class="card score-card">
+            <h2 class="card-title">Match score</h2>
+            <div class="score-ring">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="ring-bg" cx="60" cy="60" r="52" />
+                <circle id="ring-fg" class="ring-fg" cx="60" cy="60" r="52" />
+              </svg>
+              <div class="score-value">
+                <span id="score-number">0</span><span class="score-unit">%</span>
+              </div>
+            </div>
+            <p id="score-summary" class="score-summary"></p>
+          </div>
+
+          <!-- Skills -->
+          <div class="skills-column">
+            <div class="card">
+              <h2 class="card-title">Skills present <span id="present-count" class="count-badge present"></span></h2>
+              <div id="present-skills" class="chips"></div>
+            </div>
+
+            <div class="card">
+              <h2 class="card-title">Skills missing <span id="missing-count" class="count-badge missing"></span></h2>
+              <div id="missing-skills" class="chips"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <button id="reset-btn" class="btn-secondary" type="button">Parse another resume</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>0 → Shipped Resume Parser — a mock, fully client-side. Parsing via pdf.js.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
