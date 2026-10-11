@@ -1,0 +1,16 @@
+export const SKILLS = [
+  { name: 'JavaScript', re: /\bjavascript\b|\bjs\b/i },
+  { name: 'TypeScript', re: /\btypescript\b/i },
+  { name: 'HTML', re: /\bhtml5?\b/i },
+  { name: 'CSS', re: /\bcss3?\b/i },
+  { name: 'React', re: /\breact\b|\breact\.js\b/i },
+  { name: 'Node.js', re: /\bnode\.?js\b|\bnode\b/i },
+  { name: 'Python', re: /\bpython\b/i },
+  { name: 'SQL', re: /\bsql\b|\bpostgresql\b|\bmysql\b|\bsqlite\b/i },
+  { name: 'Git', re: /\bgit\b|\bgithub\b|\bgitlab\b/i },
+  { name: 'REST APIs', re: /\brest\b|\bapi\b/i },
+  { name: 'Testing', re: /\bjest\b|\bpytest\b|\bcypress\b|\bunit tests?\b/i },
+  { name: 'Docker', re: /\bdocker\b|\bcontainer/i },
+  { name: 'CI/CD', re: /\bci\/cd\b|\bcontinuous integration\b|\bgithub actions\b/i },
+  { name: 'Accessibility', re: /\ba11y\b|\baccessib/i },
+];
